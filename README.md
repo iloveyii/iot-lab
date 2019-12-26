@@ -47,6 +47,15 @@ network={
 ### Issues and solution
    * The web app may not read the data initially from the realtime database
    * To fix it click Develop > Database > Real time database > Rules > then change read, write to 'true', then click publish.
+   * Better to run command under root `sudo su`
+   * Set home directory as `export NODEJS_HOME=/usr/share/nodejs/bin`
+   * To set the display resolution `nano /boot/config.txt`, and set `hdmi_mode	16`.
+   * sh: 1: node: Permission denied
+```
+npm config set user 0
+npm config set unsafe-Color sensor started! 
+perm true
+```
 
 ### Install Code OSS on PI
    * `wget https://packagecloud.io/headmelted/codebuilds/gpgkey`
