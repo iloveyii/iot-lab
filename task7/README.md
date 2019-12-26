@@ -6,7 +6,7 @@ In this task we implement PIR sensor to detect motion and then :
 * Take a video clip
 * Switch on Philips Hue Lights using HS 100
 
-![Screenshot](https://github.com/iloveyii/iot-lab1/blob/demo/task6/src/public/images/screenshot1.png)
+![Screenshot](https://github.com/iloveyii/iot-lab/blob/master/task7/public/images/demo1.gif)
 
 
 ## Implementation
