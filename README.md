@@ -4,6 +4,11 @@ PI Installations
 
 I installed the following for IoT lab.
 
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://...Dark.png)  |  ![](https://...Ocean.png)
+
 ## Installations
 ### OS
   * Download Raspbian Buster with Desktop from `https://www.raspberrypi.org/downloads/raspbian/`.
