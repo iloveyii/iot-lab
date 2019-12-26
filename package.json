@@ -4,13 +4,13 @@
   "description": "This is and RESTFul server which fetches data from mongodb",
   "main": "index.js",
   "scripts": {
-    "start:task7": "nodemon --exec babel-node task7/server.js",
-    "start:task6": "nodemon --exec babel-node task6/server.js",
-    "start:task5": "nodemon --exec babel-node task5/server.js",
-    "start:task4": "nodemon --exec babel-node task4/server.js", 
-    "start:task3": "nodemon --exec babel-node task3/server.js", 
-    "start:task2": "nodemon --exec babel-node task2/server.js", 
-    "start:task1": "nodemon --exec babel-node task1/server.js", 
+    "task7": "nodemon --exec babel-node task7/server.js",
+    "task6": "nodemon --exec babel-node task6/server.js",
+    "task5": "nodemon --exec babel-node task5/server.js",
+    "task4": "nodemon --exec babel-node task4/server.js",
+    "task3": "nodemon --exec babel-node task3/server.js",
+    "task2": "nodemon --exec babel-node task2/server.js",
+    "task1": "nodemon --exec babel-node task1/server.js",
     "build": "mkdir dist && babel src -s -d dist"
   },
   "keywords": [

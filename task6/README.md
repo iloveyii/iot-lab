@@ -13,8 +13,5 @@ In this task we implement a trigger, for example if temperature ( sensor data fr
 
 Run the node server:
 ```bash
-cd task6/server
-npm i
-npm start
-
+npm run task6
 ```

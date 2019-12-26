@@ -14,10 +14,7 @@ In this task we implement PIR sensor to detect motion and then :
 
 ## Run
 
-Run the node server:
+Run the node server for this task:
 ```bash
-cd task6/server
-npm i
-npm start
-
+npm run task7
 ```

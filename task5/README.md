@@ -14,8 +14,6 @@ When a user clicks a button on the page an ajax request is made to the node serv
 
 Run the node server:
 ```bash
-cd task4/server
-npm i
-npm start
+npm run task5
 
 ```

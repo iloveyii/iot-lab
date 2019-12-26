@@ -1,4 +1,4 @@
-IoT Lab 01 - Task 3
+IoT Lab 01 - Task 4
 =====================================
 
 In this task we extend the task 3. We need now add a few buttons to command and control a few sensor devices (HS100, Thingy52).
@@ -14,8 +14,5 @@ When a user clicks a button on the page an ajax request is made to the node serv
 
 Run the node server:
 ```bash
-cd task4/server
-npm i
-npm start
-
+npm run task4
 ```

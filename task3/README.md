@@ -16,21 +16,5 @@ In this task we are supposed to develop a Node JS server on Raspberry PI (3), fe
 
 Run the node server:
 ```bash
-cd task3/server
-npm i
-npm start
-
-```
-
-Run live-server for web application:
-
-```bash
-cd task3/public
-npm live-server
-
-```
-
-If you have not installed live-server globally already, you can do so.
-```bash
-sudo npm i live-server -g
+npm run task3
 ```

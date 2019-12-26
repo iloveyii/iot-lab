@@ -25,8 +25,7 @@ In this task we use IFTTT to send a sensor event to a remote device (Netio4). IF
  To run the code for this task. 
 
 ```bash
-cd task2
-npm i
-npm start
+npm run task2
+
 ``` 
    
