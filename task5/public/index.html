@@ -28,11 +28,149 @@
 <body class="bg">
 <div class="wrapper ">
     <div class="main-panel" style="width: 100%">
-        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="py-5 text-center">
+                        <img class="d-block mx-auto mb-4" src="images/iot.png" alt="" width="140" height="98">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content" style="padding-top: 0; padding-bottom: 0; margin: 0">
             <div class="container-fluid">
-                
-                
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-warning card-header-icon">
+                                <div class="card-icon">
+                                    <i class="fa fa-cloud" aria-hidden="true"></i>
+                                </div>
+                                <p class="card-category">CO2</p>
+                                <h3 class="card-title" id="eco2">49/50
+                                    <small>GB</small>
+                                </h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons text-danger">warning</i>
+                                    <a href="#pablo" id="temperature-list">Freshness</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-success card-header-icon">
+                                <div class="card-icon">
+                                    <i class="fa fa-cc" aria-hidden="true"></i>
+                                </div>
+                                <p class="card-category">TVOC</p>
+                                <h3 class="card-title" id="tvoc">$34,245</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Last 24 Hours
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-danger card-header-icon">
+                                <div class="card-icon">
+                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                </div>
+                                <p class="card-category">COLOR</p>
+                                <h3 class="card-title" style="float: right" id="color">75</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">local_offer</i> Rainbow
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon">
+                                    <i class="fa fa-compass" aria-hidden="true"></i>
+                                </div>
+                                <p class="card-category">HEADING</p>
+                                <h3 class="card-title" id="heading">+245</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">update</i> Just Updated
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-chart">
+                            <div class="card-header card-header-success">
+                                <div class="ct-chart" id="temperatureChart"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Temperature</h4>
+                                <p class="card-category">
+                                    <span class="text-success" style="font-size: 30px"><i class="fa fa-thermometer-half"
+                                                                                          aria-hidden="true"></i> <span
+                                            id="temperature"></span> </span></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> Updating
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-chart">
+                            <div class="card-header card-header-warning">
+                                <div class="ct-chart" id="humidityChart"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Humidity</h4>
+                                <p class="card-category" style="font-size: 30px">
+                                    <span class="text-warning">
+                                        <i class="fa fa-tint" aria-hidden="true"></i>
+                                        <span id="humidity"></span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> Updating
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-chart">
+                            <div class="card-header card-header-danger">
+                                <div class="ct-chart" id="pressureChart"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Pressure</h4>
+                                <p class="card-category">
+                                    <span class="text-danger" style="font-size: 26px">
+                                        <i class="fa fa-cloud" aria-hidden="true"></i>
+                                        <span id="pressure"></span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> Updating
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="card card-bg">
@@ -68,7 +206,15 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="profile">
-                                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card-body">
+                                                    <h4 style="text-align: center; color: green;" class="card-title"><i
+                                                            class="fa fa-home" aria-hidden="true"></i>
+                                                        Smart Home</h4>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-4 touch-button-wrapper">
                                                 <h4 class="card-title">
@@ -308,7 +454,25 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-success">
+                                <h4 class="card-title">Live stream</h4>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <tr>
+                                    <td>
+                                        <img id="live-image" src="" alt="Live video">
+                                    </td>
+                                    <td>
+                                        <span id="live-image-status"></span>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -327,7 +491,7 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> 
             </div>
         </footer>
     </div>
@@ -343,8 +507,6 @@
 <script src="/js/chartist.min.js"></script>
 <script src="/js/show_sensor_data.js"></script>
 <script src="/js/smart_buttons.js"></script>
-
-
 </body>
 
 </html>

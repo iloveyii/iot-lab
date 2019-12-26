@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:task6": "nodemon --exec babel-node task6/server.js",
-    "start:task4": "nodemon --exec babel-node task4/server.js",
+    "start:task5": "nodemon --exec babel-node task5/server.js",
+    "start:task4": "nodemon --exec babel-node task4/server.js", 
     "build": "mkdir dist && babel src -s -d dist"
   },
   "keywords": [

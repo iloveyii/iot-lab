@@ -1,6 +1,7 @@
 // Import required packages
 import insertIntoMongo from './mongo';
 import insertIntoFirebase from './firebase';
+
 const Thingy = require('thingy52');
 const Hs100Api = require('hs100-api');
 const {startRadio, stopRadio} = require('./radio');

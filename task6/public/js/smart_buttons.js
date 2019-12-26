@@ -9,7 +9,7 @@ function makeServerRequest(type, state, cb) {
     return new Promise(function (resolve, reject) {
         setTimeout(() => {
             try {
-                fetch('http://localhost:5555/api/v1/service/' + type + '/' + state).then(data => data.json()).then(d => cb(d));
+                fetch('http://10.42.0.169:8080/api/v1/service/' + type + '/' + state).then(data => data.json()).then(d => cb(d));
             } catch (e) {
                 reject(e);
             }
