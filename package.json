@@ -8,6 +8,8 @@
     "start:task6": "nodemon --exec babel-node task6/server.js",
     "start:task5": "nodemon --exec babel-node task5/server.js",
     "start:task4": "nodemon --exec babel-node task4/server.js", 
+    "start:task3": "nodemon --exec babel-node task3/server.js", 
+    "start:task2": "nodemon --exec babel-node task2/server.js", 
     "start:task1": "nodemon --exec babel-node task1/server.js", 
     "build": "mkdir dist && babel src -s -d dist"
   },
