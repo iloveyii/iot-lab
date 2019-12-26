@@ -5,7 +5,6 @@ PI Installations
 I installed the following for IoT lab.
 
 
-Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 ![fb](https://github.com/iloveyii/iot-lab/blob/master/images/firebase1.png)  |  ![ifttt](https://github.com/iloveyii/iot-lab/blob/master/images/ifttt1.png)
 ![fb](https://github.com/iloveyii/iot-lab/blob/master/images/html51.png)  |  ![ifttt](https://github.com/iloveyii/iot-lab/blob/master/images/js1.png)
