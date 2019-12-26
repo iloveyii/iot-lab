@@ -7,14 +7,10 @@ var cameraStatus = 0;
 var cameraHandle = 0;
 var io, wCap, myIo = null;
 
-try {
 wCap = new cv.VideoCapture(0);
 wCap.set(cv.CAP_PROP_FRAME_HEIGHT, 100);
 wCap.set(cv.CAP_PROP_FRAME_WIDTH, 100);
-} catch(e) {
-	console.log('Camera ', e);
-}
-const FPS = 20;
+const FPS = 3;
 const MOTION_SENSITIVITY = 75;
 let motion = false;
 
@@ -34,11 +30,12 @@ function startHardwareOnce(http, cb) {
 
             if ((MOTION_SENSITIVITY - (similarity * 100)) > 10) {
                 motion = true;
-                if (cb) cb();
+                if (cb) cb(motion);
             } else {
                 motion = false;
+                if (cb) cb(motion);
             }
-            console.log(similarity * 10000, motion);
+            console.log('MOTION : ' + similarity * 10000, motion);
             previousImage = image;
             counter = 0;
         }
