@@ -2,7 +2,8 @@ var data;
 
 function readData(cb) {
     let sensor_data;
-    fetch('http://10.42.0.169:8080/api/v1/data')
+    // fetch('http://10.42.0.169:8080/api/v1/data')
+    fetch('https://us-central1-hkr-iot-lab1.cloudfunctions.net/sensor_data')
         .then(resp => resp.json())
         .then(d => cb(d.slice(0,8)));
 }
@@ -38,4 +39,3 @@ function rgbToHex(r, g, b) {
     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-readData();

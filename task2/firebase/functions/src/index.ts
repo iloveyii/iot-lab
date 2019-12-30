@@ -7,7 +7,8 @@ export const sensor_data = functions.https.onRequest(async (request, response) =
     var db = admin.database();
     var ref = db.ref("mydb");
     ref.on("value", function(snapshot) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
+        response.set('Access-Control-Allow-Origin', '*');
         return response.send(snapshot.val())
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
