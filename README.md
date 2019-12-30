@@ -89,3 +89,9 @@ perm true
     * firebase login
     * firebase init functions
     * firebase deploy --only functions --debug
+
+## SD card
+    * Clone SD cards 
+```bash
+    sudo dd if=/dev/sda of=~/sda.omg bs=4096 conv=notrunc,noerror status=progress
+```
