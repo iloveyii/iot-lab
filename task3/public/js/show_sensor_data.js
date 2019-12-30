@@ -5,7 +5,14 @@ function readData(cb) {
     // fetch('http://10.42.0.169:8080/api/v1/data')
     fetch('https://us-central1-hkr-iot-lab1.cloudfunctions.net/sensor_data')
         .then(resp => resp.json())
-        .then(d => cb(d.slice(0,8)));
+        .then(d => {
+            if(Array.isArray(d)) {
+                cb(d.slice(0,8))
+            } else {
+                var data = Object.values(d);
+                cb(data.slice(0,8))
+            }            
+        });
 }
 
 readData((d) => {
