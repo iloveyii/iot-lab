@@ -4,8 +4,22 @@ PI Installations
 
 I installed the following for IoT lab.
 
-## Installations
-### OS
+
+Firebase                   |  IFTTT
+:-------------------------:|:-------------------------:
+![fb](https://github.com/iloveyii/iot-lab/blob/master/images/firebase1.png)  |  ![ifttt](https://github.com/iloveyii/iot-lab/blob/master/images/ifttt1.png)
+![fb](https://github.com/iloveyii/iot-lab/blob/master/images/html51.png)  |  ![ifttt](https://github.com/iloveyii/iot-lab/blob/master/images/js1.png)
+![fb](https://github.com/iloveyii/iot-lab/blob/master/images/node1.png)  |  ![ifttt](https://github.com/iloveyii/iot-lab/blob/master/images/smarthome.jpg)
+![fb](https://github.com/iloveyii/iot-lab/blob/master/images/thingy.jpg)  | ![fb](https://github.com/iloveyii/iot-lab/blob/master/images/hkr.png)   
+
+## Installation
+    * Clone repo
+    * npm i --unsafe-perm
+    * npm run task1 # 2,3...7
+    
+## Implementation
+
+### OS install
   * Download Raspbian Buster with Desktop from `https://www.raspberrypi.org/downloads/raspbian/`.
   * Extract the image from the above step and write to SD card using Ubuntu Image Writer or Etcher.
   * In the boot partition of SD card `touch ssh` to enable ssh.
@@ -22,7 +36,7 @@ network={
   * Install required packages `sudo apt install bluetooth bluez libbluetooth-dev libbluetooth-dev libudev-dev`
   
   
-### Node
+### Node - install
   * Install Node Version Manager (NVM)
     `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash`
   * Source profile
@@ -32,7 +46,7 @@ network={
   * If you want to use latest npm `npm install npm@latest -g`
   
      
-### Firebase config
+## Firebase config
   * Create a google account (google.com)
   * Goto firebase console (https://console.firebase.google.com)
   * Add a project
@@ -44,11 +58,20 @@ network={
 
 
 
-### Issues and solution
+## Issues and solution
    * The web app may not read the data initially from the realtime database
    * To fix it click Develop > Database > Real time database > Rules > then change read, write to 'true', then click publish.
+   * Better to run command under root `sudo su`
+   * Set home directory as `export NODEJS_HOME=/usr/share/nodejs/bin`
+   * To set the display resolution `nano /boot/config.txt`, and set `hdmi_mode	16`.
+   * sh: 1: node: Permission denied
+```
+npm config set user 0
+npm config set unsafe-Color sensor started! 
+perm true
+```
 
-### Install Code OSS on PI
+## Install Code OSS on PI
    * `wget https://packagecloud.io/headmelted/codebuilds/gpgkey`
    * `sudo apt-key add gpgkey`
    * `sudo -s`
@@ -61,3 +84,8 @@ network={
      
      `apt-mark unhold code-oss`
    
+## Firebase functions
+    * npm i -g firebase-tools
+    * firebase login
+    * firebase init functions
+    * firebase deploy --only functions --debug
