@@ -1,13 +1,10 @@
 // Import required packages
-import insertIntoMongo from './mongo';
-import insertIntoFirebase from './firebase';
 
 const Thingy = require('thingy52');
 const Hs100Api = require('hs100-api');
-const {startRadio, stopRadio} = require('./radio');
 
 const HS100_IP = '192.168.230.204';
-const INTERVAL = 25000; // Fetching data from thingy or simulation interval
+const INTERVAL = 2000; // Fetching data from thingy or simulation interval
 const DISCOVERY_TIMEOUT = 5000;
 
 
@@ -56,6 +53,7 @@ class MyThingy {
         this.uuid = 'simulation';
 
         setInterval(() => {
+            console.log('Simulation setInterval');
             let data = {
                 eco2: this.random(300, 1500),
                 tvoc: this.random(10, 20),
@@ -70,9 +68,9 @@ class MyThingy {
                 humidity: this.random(20, 40),
                 pressure: this.random(500, 1500),
             };
-            insertIntoFirebase(data);
-            this.cb(data);
-            this._onButtonChange(self.state);
+            this.cb && this.cb(data);
+            simThingy._onButtonChange(self.state);
+            self.state = ! self.state;
         }, INTERVAL);
 
         return simThingy;
@@ -208,11 +206,6 @@ class MyThingy {
         this.data.temperature = temperature;
         this.data._id && delete this.data['_id'];
         // console.log(JSON.stringify(this.data));
-        insertIntoMongo(this.data);
-
-        if (this.data.eco2) {
-            insertIntoFirebase(this.data);
-        }
     }
 
     _onPressureData(pressure) {
