@@ -18,7 +18,7 @@ const mongoClient = require('mongodb').MongoClient;
 
 const mongo = {
     dbname: 'sensor_data',
-    url: 'mongodb://localhost:27017',
+    url: 'mongodb://10.42.0.1:27017',
     mongoOptions: {useNewUrlParser: true},
 };
 let db = null;
@@ -60,6 +60,7 @@ app.get('/api/v1/data', async (req, res) => {
         .then(() => readData()
             .then((data) => res.json(data)));
 });
+
 
 app.listen(8080, () => console.log('Server started on port ' + 8080));
 
