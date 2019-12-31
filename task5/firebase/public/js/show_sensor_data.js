@@ -26,12 +26,15 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var mydb = firebase.database().ref().child('mydb');
+var allData = [];
 mydb.on("child_added", function (snap) {
     data = snap.val();
+    allData.push(snap.val());
     displayData(snap.val());
 });
 
 function displayData(data) {
+    if( ! data ||  ! data.temperature ) return;
     document.getElementById('temperature').innerHTML = data.temperature;
     document.getElementById('pressure').innerHTML = data.pressure;
     document.getElementById('eco2').innerHTML = data.eco2 ? data.eco2 : 'na';
@@ -50,8 +53,14 @@ function displayData(data) {
     }
 
     if (data && data.heading) {
-        document.getElementById('heading').innerHTML = data.heading.toFixed(2);
-        data.heading = data.heading.toFixed(2);
+        let heading = data.heading;
+        if(isNaN(heading)) {
+            console.log(heading)
+        } else {
+            document.getElementById('heading').innerHTML = parseFloat(data.heading).toFixed(2);
+            data.heading = data.heading.toFixed(2);
+        }
+        data.heading = 1;
         //document.getElementById('rotation').innerHTML = data.rotation.m_11.toFixed(3);
         //data.rotation = data.rotation.m_11.toFixed(3);
     }
@@ -107,8 +116,12 @@ function showDataInTable(d) {
             if (['temperature', 'pressure', 'humidity', 'eco2', 'tvoc', 'heading', 'color'].includes(key)) {
                 td = document.createElement('td');
                 if (key === 'color' && row[key]) {
-                    //const color = rgbToHex(row[key].red % 255, row[key].green % 255, row[key].blue % 255);
-                    td.innerHTML = "<div style='background-color: " + row[key] + " '>" + row[key] + "</div>";
+                    if(typeof row[key] == 'string') {
+                        td.innerHTML = "<div style='background-color: " + row[key] + " '>" + row[key] + "</div>";
+                    } else {
+                        const color = rgbToHex(row[key].red % 255, row[key].green % 255, row[key].blue % 255);
+                        td.innerHTML = "<div style='background-color: "+color+" '>"+color+"</div>";
+                    }
                 } else {
                     td.innerText = (row[key]);
                 }
@@ -160,6 +173,17 @@ function drawChart(elementId, d) {
     let historySeries = [];
 }
 
+setTimeout(() => {
+    if(allData.length > 1) {
+        const max = allData.length;
+        let count = 0;
+        setInterval(() => {
+            displayData(allData[count]);
+            count++;
+            if(count > max) count = 0;
+        }, 1000)
+    }
+}, 5000);
 
 
 
