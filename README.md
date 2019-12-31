@@ -17,9 +17,9 @@ Firebase                   |  IFTTT
 [DEMO TASK 5](https://task5-2098b.firebaseapp.com/)
 
 ## Installation
-    * Clone repo `git clone https://github.com/iloveyii/iot-lab`
-    * npm i --unsafe-perm
-    * npm run task1 # 2,3...7
+   * Clone repo `git clone https://github.com/iloveyii/iot-lab`
+   * npm i --unsafe-perm
+   * npm run task1 # 2,3...7
     
 ## Implementation
 
