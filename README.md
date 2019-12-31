@@ -97,5 +97,5 @@ perm true
 ## SD card
     * Clone SD cards 
 ```bash
-    sudo dd if=/dev/sda of=~/sda.omg bs=4096 conv=notrunc,noerror status=progress
+    sudo dd if=/dev/sda of=~/sda.img bs=4096 conv=notrunc,noerror status=progress
 ```

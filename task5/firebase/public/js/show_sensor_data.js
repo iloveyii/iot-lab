@@ -116,14 +116,20 @@ function showDataInTable(d) {
             if (['temperature', 'pressure', 'humidity', 'eco2', 'tvoc', 'heading', 'color'].includes(key)) {
                 td = document.createElement('td');
                 if (key === 'color' && row[key]) {
-                    if(typeof row[key] == 'string') {
-                        td.innerHTML = "<div style='background-color: " + row[key] + " '>" + row[key] + "</div>";
+
+                    if(row[key].includes('NaN')) {
+                        console.log(row[key]);
+                        td.innerHTML = "<div style='background-color: green'>green</div>";
                     } else {
-                        const color = rgbToHex(row[key].red % 255, row[key].green % 255, row[key].blue % 255);
-                        td.innerHTML = "<div style='background-color: "+color+" '>"+color+"</div>";
+                        if (typeof row[key] == 'string') {
+                            td.innerHTML = "<div style='background-color: " + row[key] + " '>" + row[key] + "</div>";
+                        } else {
+                            const color = rgbToHex(parseInt(row[key].red % 255), parseInt(row[key].green % 255), parseInt(row[key].blue % 255));
+                            td.innerHTML = "<div style='background-color: " + color + " '>" + color + "</div>";
+                        }
                     }
                 } else {
-                    td.innerText = (row[key]);
+                    td.innerText = row[key];
                 }
                 tr.appendChild(td);
             }
