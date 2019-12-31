@@ -89,10 +89,10 @@ perm true
      `apt-mark unhold code-oss`
    
 ## Firebase functions
-    * npm i -g firebase-tools
-    * firebase login
-    * firebase init functions
-    * firebase deploy --only functions --debug
+   * npm i -g firebase-tools
+   * firebase login
+   * firebase init functions
+   * firebase deploy --only functions --debug
 
 ## SD card
     * Clone SD cards 
