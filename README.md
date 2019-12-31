@@ -13,6 +13,7 @@ Firebase                   |  IFTTT
 ![fb](https://github.com/iloveyii/iot-lab/blob/master/images/thingy.jpg)  | ![fb](https://github.com/iloveyii/iot-lab/blob/master/images/hkr.png)   
 
 [DEMO TASK 3](https://hkr-iot-lab1.firebaseapp.com/)
+
 [DEMO TASK 5](https://task5-2098b.firebaseapp.com/)
 
 ## Installation
